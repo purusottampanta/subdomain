@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@section('title')
+    Confirm Password
+@endsection
+
+@include('layouts.partials.navbar')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
