@@ -90,7 +90,13 @@
             text-transform: capitalize;
         }
         
-        .loginData input {
+        .registerData {
+            margin-top: 50px;
+        }
+        
+        .loginData input,
+        .registerData input,
+        .registerData select {
             margin-bottom: 30px;
             height: 50px;
             border-radius: 50px;
