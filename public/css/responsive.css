@@ -9,21 +9,38 @@
                 width: 550px;
                 height: 550px;
             }
+            .logInContain {
+                padding-top: 8pc;
+            }
         }
         /* large screens */
         
         @media(min-width:1900px) and (max-width:1950px) {
             .logInContain {
-                padding: 50px 0;
+                padding: 75px 0;
             }
             .logImg {
-                width: 650px;
-                height: 650px;
+                width: 700px;
+                height: 700px;
             }
             .logInHead {
-                padding: 60px 0;
+                padding: 10pc 0;
             }
             .logImg {
-                margin: 25px 1pc 20px auto;
+                margin: 85px 1pc 20px auto;
+            }
+            .logInHead h1 {
+                font-size: 90px;
+                margin-bottom: 5px;
+            }
+            .forgotPass a {
+                font-size: 18px;
+            }
+            .alreadyAc p {
+                font-size: 20px;
+            }
+            .logWith {
+                font-size: 18px;
+                padding: 20px;
             }
         }
