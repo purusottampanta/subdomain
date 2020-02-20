@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
-@include('layouts.partials.navbar')
+@section('title')
+    Reset Password
+@endsection
 
 @section('content')
 <div class="container">

@@ -18,6 +18,17 @@ if (! function_exists('getUserTypes')) {
 	}
 }
 
+if (! function_exists('getUserStatus')) {
+	function getUserStatus()
+	{
+		return [
+			'pending' 			=> 'Pending',
+			'verified' 			=> 'Verified',
+			'unverified'			=> 'Unverified'
+		];
+	}
+}
+
 if(! function_exists('getThumbnail')){
 	function getThumbnail($photoPath)
 	{
@@ -54,5 +65,27 @@ if (! function_exists('unlinkFiles')) {
 			}
 			unlink($path);
 		}
+	}
+}
+
+if(! function_exists('setActive')){
+	function setActive($route, $class = 'active'){
+		$current_route = Route::getCurrentRoute() ? Route::getCurrentRoute()->getName() : null;
+		if($current_route){
+			if(is_array($route)){
+				if(in_array($current_route, $route)){
+					return $class;
+				}
+
+				return '';
+			}else{
+				if($current_route == $route){
+					return $class;
+				}
+
+				return '';
+			}
+		}
+		return '';
 	}
 }

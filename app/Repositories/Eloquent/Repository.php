@@ -22,7 +22,6 @@ abstract class Repository
 		$this->app = $app;
 		$this->image = $image;
 		$this->makeModel();
-		$this->setHomestay($this->activeHomestay());
 		$this->user = auth()->user();
 	}
 

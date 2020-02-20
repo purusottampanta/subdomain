@@ -65,13 +65,10 @@ class UserRepository extends Repository
 		}
 
 		$user->type = $request->type;
+		$user->status = $request->status;
 
 		$user->save();
 
-		if($request->has('roles')){
-			$user->roles()->sync($request->roles);
-		}
-		
 		return $user;
 	}
 	public function passwordChange($user, $request)

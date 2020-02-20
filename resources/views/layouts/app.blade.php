@@ -23,7 +23,6 @@
         <link rel="stylesheet" href="{{asset('css/owl.carousel.min.css')}}">
         <link rel="stylesheet" href="{{asset('css/owl.theme.default.min.css')}}">
         <link rel="stylesheet" type="text/css" href="{{asset('css/responsive.css')}}">
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
 
@@ -32,7 +31,7 @@
 </head>
 <body>
     <div id="app" class="hireMeBack">
-        {{-- @include('layouts.partials.navbar') --}}
+        @include('layouts.partials.navbar')
         @yield('content')
         @include('layouts.partials.footer')
     </div>
@@ -46,7 +45,6 @@
         <script type="text/javascript " src="{{asset('js/bootstrap.min.js')}} "></script>
         <script type="text/javascript " src="{{asset('js/owl.carousel.min.js')}} "></script>
         <script src="{{asset('js/scripts.js')}} "></script>
-        <script src="{{ asset('js/app.js') }}" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
 
     @show

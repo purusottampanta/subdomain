@@ -6,13 +6,13 @@ class UserPresenter extends Presenter{
     public function profilePicture()
 	{
 		$value = $this->entity->profile_picture;
-		return asset($value ? getSmallThumbnail($value) : 'lte/dist/img/avatar6.png');
+		return asset($value ? getSmallThumbnail($value) : 'dashboard/images/user.png');
     }
     
     public function thumbnail()
 	{
 		$value = $this->entity->profile_picture;
-		return asset($value ? getThumbnail($value) : 'lte/dist/img/avatar6.png');
+		return asset($value ? getThumbnail($value) : 'dashboard/images/user.png');
 	}
 
 

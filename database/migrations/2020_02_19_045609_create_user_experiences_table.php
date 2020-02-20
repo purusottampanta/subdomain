@@ -20,7 +20,8 @@ class CreateUserExperiencesTable extends Migration
             $table->string('designation')->nullable();
             $table->integer('experience')->nullable();
             $table->timestamp('from')->nullable();
-            $table->timestamps('to')->nullable();
+            $table->timestamp('to')->nullable();
+            $table->timestamps();
             $table->softDeletes();
 
             $table->foreign('user_id')

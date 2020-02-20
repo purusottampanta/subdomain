@@ -20,7 +20,8 @@ class CreateSettingsTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
-
+        $now = now();
+        
         DB::table('settings')->insert([
             ['key' => 'facebook_url', 'value' => "https://www.facebook.com/", 'created_at' => $now, 'updated_at' => $now],
             ['key' => 'twitter_url', 'value' => "https://www.twitter.com/", 'created_at' => $now, 'updated_at' => $now],

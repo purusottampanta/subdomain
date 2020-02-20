@@ -22,6 +22,8 @@ class User extends Authenticatable implements MustVerifyEmail
     const STATUS_PENDING = 'pending';
     const STATUS_UNVERIFIED = 'unverified';
     const STATUS_VERIFIED = 'verified';
+    
+    protected $presenter = 'App\Presenters\UserPresenter';
 
     protected $fillable = [
         'name',

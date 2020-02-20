@@ -3,19 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\Eloquent\UserRepository;
 
 class HomeController extends Controller
 {
+    function __construct(UserRepository $userRepo)
+    {
+        $this->middleware('auth');
+        $this->userRepo = $userRepo;
+    }
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Show the application dashboard.
      *
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if (authUser()->type=='system') {
+            $users = $this->userRepo->paginate(null,20);
+            return view('home',compact('users'));
+        }
+        else {
+            return view('welcome');
+        }
     }
 }
