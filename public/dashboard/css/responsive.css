@@ -1,0 +1,50 @@
+        @media(min-width:1900px) and (max-width:1950px) {
+            .dashContain h1:after {
+                top: 52px;
+                left: 47%;
+            }
+            .iconsBack {
+                width: 80px;
+                height: 80px;
+            }
+            .pendingUsers,
+            .unverifyUsers,
+            .verifyUser,
+            .iconsBack {
+                border-width: 5px;
+                margin: 0 auto;
+                text-align: center;
+            }
+            .iconsGrp i {
+                line-height: 65px;
+                font-size: 35px;
+            }
+            .iconsInfo h6 {
+                font-size: 20px;
+                margin-bottom: 3px;
+            }
+            .iconsInfo p {
+                font-size: 16px;
+            }
+            .iconsInfo {
+                padding-top: 18px;
+                margin-left: -15px;
+            }
+            .iconsGrp {
+                margin: 30px 0;
+            }
+            .selectBoxDash span,
+            .selectBoxDash select {
+                font-size: 15px;
+            }
+            .userDetailBack {
+                max-width: 340px;
+            }
+        }
+        
+        @media(min-width:1530px) and (max-width:1560px) {
+            .dashContain h1:after {
+                top: 52px;
+                left: 46.5%;
+            }
+        }

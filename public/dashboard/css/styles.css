@@ -1,0 +1,476 @@
+        body {
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F6FAFD;
+        }
+        
+        .clear {
+            clear: both;
+        }
+        /*         
+        .container-fluid {
+            padding: 0 100px;
+        } */
+        /* navbar */
+        
+        .navTop {
+            padding: 15px 40px;
+            box-shadow: rgba(0, 0, 0, 0.06) 0 5px 10px;
+            background-color: #fff;
+            z-index: 10000;
+            position: absolute;
+            width: 100%;
+        }
+        
+        .logo {
+            float: left;
+        }
+        
+        .dashSpaceCut {
+            background-color: #fff;
+            max-width: 280px;
+            height: 100vh;
+        }
+        
+        .menuList {
+            float: right;
+        }
+        
+        .menuList ul {
+            margin: 0;
+            padding: 10px 0;
+        }
+        
+        .menuList li {
+            list-style-type: none;
+            display: inline-block;
+            padding-right: 10px;
+            color: #757575;
+        }
+        
+        .menuList li:last-child {
+            padding-right: 0;
+        }
+        
+        .menuList p {
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        
+        .adminData {
+            margin-top: 90px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+        
+        .userInfo {
+            padding-top: 25px;
+        }
+        
+        .userInfo h6 {
+            margin-bottom: 0;
+        }
+        
+        .userInfo p {
+            margin-bottom: 0;
+            font-weight: bold;
+        }
+        
+        .userImg {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .userImg img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+        
+        .dashMenus ul {
+            margin: 0;
+            padding: 0 20px;
+        }
+        
+        .dashMenus li:first-child {
+            padding-top: 20px;
+        }
+        
+        .dashMenus li {
+            list-style-type: none;
+            padding: 8px 0;
+            color: #757575;
+        }
+        
+        .dashMenus a {
+            text-decoration: none;
+            color: #757575;
+        }
+        
+        .dashMenus li i {
+            padding-right: 10px;
+            text-align: right;
+        }
+        
+        .dashMenus .active a,
+        .dashMenus a:hover {
+            font-weight: bold;
+            color: #000;
+        }
+        
+        .dashMenus .active .fa-tachometer-alt {
+            color: orange;
+        }
+        
+        .dashMenus .active .fa-users {
+            color: #03abf6;
+        }
+        
+        .dashMenus .active .fa-building {
+            color: #9100FF;
+        }
+        
+        .dashMenus .active .fa-cog {
+            color: #0053F9;
+        }
+        
+        .dashMenus .active .fa-clipboard {
+            color: #FFAA00;
+        }
+        
+        .dashMenus .active .fa-sign-out-alt {
+            color: red;
+        }
+        /* dashboard data */
+        
+        .dashContain {
+            padding: 30px;
+            margin-top: 5pc;
+        }
+        
+        .dashContain h1 {
+            text-align: center;
+            font-weight: bold;
+            position: relative;
+        }
+        
+        .dashContain h1:after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 5px;
+            background-color: #2C1DEC;
+            top: 52px;
+            left: 46%;
+            border-radius: 50px;
+        }
+        
+        .iconsGrp {
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 13px;
+            margin: 15px 0;
+            box-shadow: 3px 4px 52px -17px rgba(143, 137, 143, .3);
+        }
+        
+        .iconsGrp .iconsInner {
+            padding: 13px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        
+        .iconsBack {
+            border: 4px solid #FF843D;
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            text-align: center;
+        }
+        
+        .iconsGrp i {
+            line-height: 50px;
+            font-size: 30px;
+            color: #FF843D;
+        }
+        
+        .iconsInfo {
+            padding-top: 10px;
+        }
+        
+        .iconsInfo h6 {
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 5px;
+        }
+        
+        .iconsInfo p {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            color: #757575;
+            font-size: 13px;
+        }
+        
+        .verifyUser {
+            border: 4px solid #00A806;
+        }
+        
+        .verifyUser i {
+            color: #00A806;
+        }
+        
+        .pendingUsers {
+            border: 4px solid #285EBB;
+        }
+        
+        .pendingUsers i {
+            color: #285EBB;
+        }
+        
+        .unverifyUsers {
+            border: 4px solid red;
+        }
+        
+        .unverifyUsers i {
+            color: red;
+        }
+        
+        .form-control {
+            border-radius: 50px;
+            border: 2px solid #ddd !important;
+            height: 50px;
+        }
+        
+        .selectBoxDash {
+            float: right;
+            position: relative;
+        }
+        
+        .form-control:focus {
+            box-shadow: none;
+            border-color: #2C1DEC !important;
+        }
+        
+        .selectBoxDash select {
+            font-size: 14px;
+            height: calc(1.5em + .75rem + 2px);
+        }
+        
+        .selectBoxDash span {
+            position: absolute;
+            top: 10px;
+            right: 125px;
+            width: 200px;
+            text-align: right;
+            font-weight: bold;
+            font-size: 13px;
+        }
+        
+        .dashTable {
+            box-shadow: 3px 4px 52px -17px rgba(143, 137, 143, .3);
+            background-color: #fff;
+            padding: 20px 20px 8px 20px;
+            border-radius: 30px;
+            text-align: center;
+            margin-top: 25px;
+        }
+        
+        .dashTable table {
+            /* border-radius: 30px; */
+            border: 1px solid #ddd;
+        }
+        
+        thead {
+            background-color: #2C1DEC;
+            color: #fff;
+        }
+        
+        .dashTable a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        
+        .dashTable a i {
+            font-size: 14px;
+        }
+        
+        .dashTable a:hover,
+        .dashTable .fa-trash-alt:hover {
+            color: #757575;
+        }
+        
+        .dashTable .fa-trash-alt {
+            color: red;
+        }
+        
+        .editForm,
+        .noticeGrp {
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 30px;
+            margin: 40px 0;
+            box-shadow: 3px 4px 52px -17px rgba(143, 137, 143, .3);
+        }
+        
+        .editForm input,
+        .editForm select {
+            box-shadow: 3px 4px 52px -17px rgba(143, 137, 143, .3);
+            border: 1px solid #ddd;
+            margin-bottom: 25px;
+        }
+        
+        .editForm label {
+            font-weight: bold;
+            font-size: 15px;
+        }
+        
+        .btn-hireMeBtn {
+            background-color: #2C1DEC;
+            padding: 8px 25px;
+            font-size: 14px;
+            color: #fff;
+            border-radius: 50px;
+        }
+        
+        .dashButtton {
+            float: right;
+        }
+        
+        .btn-hireMeBtn:hover {
+            background-color: #757575;
+            color: #fff;
+        }
+        
+        .userDetailBack,
+        .oraganizationDetails {
+            background-color: #fff;
+            border-radius: 30px;
+            box-shadow: 3px 4px 52px -17px rgba(143, 137, 143, .3);
+            padding: 30px;
+            margin: 40px 0;
+        }
+        
+        .userDetailBack p,
+        .oraganizationDetails p {
+            font-size: 16px;
+            color: #757575;
+            font-weight: 500;
+        }
+        
+        .userDetailBack strong,
+        .oraganizationDetails strong {
+            color: #000;
+        }
+        
+        .userDetDashImg {
+            width: 130px;
+            margin: 20px auto;
+            height: 130px;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 3px 4px 52px -17px rgba(143, 137, 143, .3);
+            border-radius: 50%;
+        }
+        
+        .userDetDashImg img {
+            border-radius: 50%;
+            height: 100%;
+            width: 100%;
+        }
+        
+        .oragnizationImg {
+            width: 140px;
+            height: 50px;
+            float: right;
+            margin-top: -80px;
+        }
+        
+        .oragnizationImg img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .noticeGrp p {
+            color: #757575;
+        }
+        
+        .noticeGrp strong {
+            color: #000;
+        }
+        
+        .noticeData p {
+            text-align: justify;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .noticeGrp .form-control {
+            height: 38px;
+        }
+        
+        .noticeGrp label {
+            font-weight: bold;
+        }
+        
+        .noticeGrp input,
+        .noticeGrp textarea {
+            margin-bottom: 25px;
+        }
+        /* modal */
+        
+        .modal-content {
+            border-radius: 30px;
+            position: relative;
+        }
+        
+        .hireMeGrp {
+            padding: 8px;
+        }
+        
+        .hireMeInner {
+            border: 1px solid #ddd;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .btn-hireMeWarn {
+            border-radius: 50px;
+            color: #fff;
+            padding: 5px 30px;
+            background-color: red;
+            margin-right: 20px;
+        }
+        
+        .btn-hireMeWarn:hover {
+            background-color: #c13c3c;
+            color: #ddd;
+        }
+        
+        .btn-hireMeInfo {
+            background-color: #757575;
+            color: #fff;
+            padding: 5px 30px;
+            border-radius: 50px;
+        }
+        
+        .btn-hireMeInfo :hover {
+            background-color: #a29f9f;
+            color: #fff !important;
+        }
+        
+        .hireMeInner span {
+            position: absolute;
+            top: -10px;
+            right: 0;
+            background-color: red;
+            color: #fdf !important;
+            opacity: 1;
+            font-size: 18px;
+            height: 25px;
+            width: 25px;
+            border-radius: 50%;
+            line-height: 23px;
+            cursor: pointer;
+        }

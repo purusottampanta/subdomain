@@ -27,6 +27,8 @@
         
         .hireMeNav .navbar {
             padding: 15px 0;
+            background-color: #fff;
+            box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
         }
         
         .form-control {
@@ -154,7 +156,7 @@
         
         .topFooter {
             background-color: #F6FAFD;
-            padding: 30px 0;
+            padding: 50px 0;
             text-align: center;
         }
         
@@ -235,7 +237,11 @@
         
         .topFooter h1 {
             color: #000;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             font-weight: bold;
             position: relative;
+        }
+        
+        .logInContain {
+            padding-top: 6pc;
         }
