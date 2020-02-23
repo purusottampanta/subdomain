@@ -11,15 +11,26 @@
             <div class="row">
 
                 <div class="col-lg-12">
-
-                    <div class="selectBoxDash">
-                        <span>Sort By : </span>
-                        <select class="form-control ml-1">
-                            <option class="1" value="New User">New Users</option>
-                            <option class="1" value="New User">New Users</option>
-                            <option class="1" value="New User">New Users</option>
-                        </select>
-                    </div>
+                    <form action="{{route('users.index')}}" method="GET">
+                        <div class="selectBoxDash">
+                            <span>Sort By : </span>
+                            <select name="sort" id="sort" class="form-control">
+                                <option value="created_at-desc" {{ $sort == 'created_at-desc' ? 'selected' : '' }}>Created at latest</option>
+                                <option value="created_at-asc" {{ $sort == 'created_at-asc' ? 'selected' : '' }}>Created at oldest</option>
+                                <option value="updated_at-desc" {{ $sort == 'updated_at-desc' ? 'selected' : '' }}>Updated at latest</option>
+                                <option value="updated_at-asc" {{ $sort == 'updated_at-asc' ? 'selected' : '' }}>Updated at oldest</option>
+                                <option value="name-desc" {{ $sort == 'name-desc' ? 'selected' : '' }}>Name z to a</option>
+                                <option value="name-asc" {{ $sort == 'name-asc' ? 'selected' : '' }}>Name a to z</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="s">Search</label>
+                                <input type="text" name="s" id="s" class="form-control" value="{{$s}}">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-default" style="margin-top: 25px">Search</button>
+                    </form>
                 </div>
                 <div class="col-lg-12">
                     <div class="dashTable">

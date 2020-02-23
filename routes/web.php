@@ -20,5 +20,12 @@ Route::group(['middleware' => 'verified'], function(){
 
     Route::resource('users', 'UsersController');
     Route::resource('settings', 'SettingsController');
+    Route::resource('details', 'DetailsController');
+    Route::resource('documents', 'DocumentsController');
+    Route::resource('educations', 'EducationsController');
+    Route::resource('experiences', 'ExperiencesController');
+    Route::resource('portfolios', 'PortfoliosController');
+    Route::resource('profiles', 'ProfilesController');
+    Route::resource('skills', 'SkillsController');
 
 });

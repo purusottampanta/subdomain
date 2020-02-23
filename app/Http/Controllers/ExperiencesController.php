@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\Eloquent\UserRepository;
 use App\Repositories\Eloquent\ExperienceRepository;
 
 class ExperiencesController extends Controller
 {
-    function __construct(ExperienceRepository $experienceRepo)
+    protected $userRepo;
+    protected $experienceRepo;
+
+    function __construct(ExperienceRepository $experienceRepo, UserRepository $userRepo)
     {
+        $this->userRepo = $userRepo;
         $this->experienceRepo = $experienceRepo;
     }
     /**
@@ -39,7 +44,8 @@ class ExperiencesController extends Controller
      */
     public function store(Request $request)
     {
-        $experience = $this->experienceRepo->store($request);
+        $user = $this->userRepo->requiredById($request->user_id);
+        $experience = $this->experienceRepo->store($request, $user);
 
         return back()->withStatus('Experience Added');
     }

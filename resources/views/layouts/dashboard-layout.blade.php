@@ -40,8 +40,8 @@
 
 
 
-    <script type="text/javascript " src="js/jquery-3.2.1.min.js "></script>
-    <script type="text/javascript " src="js/bootstrap.min.js "></script>
+    <script type="text/javascript " src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
+    <script type="text/javascript " src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
     <script src="js/owl.carousel.min.js "></script>
     <script src=" js/scripts.js "></script>

@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\Eloquent\UserRepository;
 use App\Repositories\Eloquent\ProfileRepository;
 
 class ProfilesController extends Controller
 {
-    function __construct(ProfileRepository $profileRepo)
+    protected $userRepo;
+    protected $profileRepo;
+
+    function __construct(ProfileRepository $profileRepo, UserRepository $userRepo)
     {
+        $this->userRepo = $userRepo;
         $this->profileRepo = $profileRepo;
     }
     /**
@@ -39,7 +44,8 @@ class ProfilesController extends Controller
      */
     public function store(Request $request)
     {
-        $profile = $this->profileRepo->store($request);
+        $user = $this->userRepo->requiredById($request->user_id);
+        $profile = $this->profileRepo->store($request, $user);
 
         return back()->withStatus('Profile Added');
     }

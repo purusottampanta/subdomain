@@ -18,14 +18,15 @@ class SkillRepository extends Repository
 		return $this->model;
 	}
 
-	public function store($request)
+	public function store($request, $user)
 	{
-        $skill->users()
-            ->attach($user,
+        $user->skills()
+            ->create(
                 [
+					'user_id' =>$user->id,
                     'skill' => $request->skill,
                 ]);
 
-        return $skill;
+        return $user->skill;
     }
 }

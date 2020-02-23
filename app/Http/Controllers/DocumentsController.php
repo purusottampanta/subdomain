@@ -8,6 +8,9 @@ use App\Repositories\Eloquent\DocumentRepository;
 
 class DocumentsController extends Controller
 {
+    protected $userRepo;
+    protected $documnetRepo;
+
     function __construct(UserRepository $userRepo, DocumentRepository $documnetRepo)
     {
         $this->userRepo = $userRepo;

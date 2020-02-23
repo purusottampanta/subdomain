@@ -18,16 +18,17 @@ class EducationRepository extends Repository
 		return $this->model;
 	}
 
-	public function store($request)
+	public function store($request ,$user)
 	{
-        $education->users()
-            ->attach($user,
+        $user->educations()
+            ->create(
                 [
+					'user_id' =>$user->id,
                     'education' => $request->education,
                     'from'  => $request->from,
-                    'to'    => $request->to? :null,
+                    'to'    => $request->to? $request->to :null,
                 ]);
 
-        return $education;
+        return $user->education;
     }
 }

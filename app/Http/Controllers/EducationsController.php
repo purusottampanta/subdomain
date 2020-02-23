@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\Eloquent\UserRepository;
 use App\Repositories\Eloquent\EducationRepository;
 
 class EducationsController extends Controller
 {
-    function __construct(EducationRepository $educationRepo)
+    protected $userRepo;
+    protected $educationRepo;
+
+    function __construct(EducationRepository $educationRepo, UserRepository $userRepo)
     {
+        $this->userRepo = $userRepo;
         $this->educationRepo = $educationRepo;
     }
     /**
@@ -39,7 +44,8 @@ class EducationsController extends Controller
      */
     public function store(Request $request)
     {
-        $education = $this->educationRepo->store($request);
+        $user = $this->userRepo->requiredById($request->user_id);
+        $education = $this->educationRepo->store($request, $user);
 
         return back()->withStatus('Education Added');
     }

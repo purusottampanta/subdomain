@@ -3,13 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\Eloquent\UserRepository;
 use App\Repositories\Eloquent\DetailRepository;
 
 
 class DetailsController extends Controller
 {
-    function __construct(DetailRepository $detailRepo)
+    protected $userRepo;
+    protected $detailRepo;
+
+    function __construct(DetailRepository $detailRepo, UserRepository $userRepo)
     {
+        $this->userRepo = $userRepo;
         $this->detailRepo = $detailRepo;
     }
     /**
@@ -40,7 +45,8 @@ class DetailsController extends Controller
      */
     public function store(Request $request)
     {
-        $detail = $this->detailRepo->store($request);
+        $user = $this->userRepo->requiredById($request->user_id);
+        $detail = $this->detailRepo->store($request, $user);
 
         return back()->withStatus('Details added');
     }

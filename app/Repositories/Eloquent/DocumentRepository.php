@@ -23,44 +23,38 @@ class DocumentRepository extends Repository
         if(!$user){
             $user = authUser();
         }
-
+        $inputs=$request->except(['pp_photo','citizenship_back','citizenship_front','resume']);
         if($request->hasFile('pp_photo'))
         {
             $file = $request->file('pp_photo');
 			$data = $this->uploadPhoto($file, "uploads/usersDetails/{$user->id}", NULL, 100, 90);
-            $request['pp_photo'] = $data['photo_path'];
+            $inputs['pp_photo'] = $data['photo_path'];
         }
 
         if($request->hasFile('citizenship_front'))
         {
             $file = $request->file('citizenship_front');
 			$data = $this->uploadPhoto($file, "uploads/usersDetails/{$user->id}", NULL, 100, 90);
-            $request['citizenship_front'] = $data['citizenship_front'];
+            $inputs['citizenship_front'] = $data['photo_path'];
         }
 
         if($request->hasFile('citizenship_back'))
         {
             $file = $request->file('citizenship_back');
 			$data = $this->uploadPhoto($file, "uploads/usersDetails/{$user->id}", NULL, 100, 90);
-            $request['citizenship_back'] = $data['citizenship_back'];
+            $inputs['citizenship_back'] = $data['photo_path'];
         }
 
         if($request->hasFile('resume'))
         {
             $file = $request->file('resume');
 			$data = $this->uploadFile($file, "uploads/usersDetails/{$user->id}", NULL);
-            $request['resume'] = $data['resume'];
+            $inputs['resume'] = $data['photo_path'];
         }
         
-        $documnet->users()
-            ->attach($user,
-                [
-                    'pp_photo'            => $request->pp_photo,
-                    'citizenship_front'   => $request->citizenship_front,
-                    'citizenship_back'    => $request->citizenship_back,
-                    'resume'              => $request->resume,
-                ]);
+        $user->document()
+            ->create($inputs);
 
-        return $education;
+        return $user->document;
     }
 }

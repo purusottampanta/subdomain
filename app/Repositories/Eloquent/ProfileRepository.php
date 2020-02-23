@@ -18,17 +18,18 @@ class ProfileRepository extends Repository
 		return $this->model;
 	}
 
-	public function store($request)
+	public function store($request, $user)
 	{
-        $profile->users()
-            ->attach($user,
+        $user->profile()
+            ->create(
                 [
+                    'user_id' => $user->id,
                     'profession' => $request->profession,
                     'current_company' => $request->current_company,
                     'expected_salary' => $request->expected_salary,
-                    'description' => $request->expected_salary,
+                    'description' => $request->description,
                 ]);
 
-        return $profile;
+        return $user->profile;
     }
 }

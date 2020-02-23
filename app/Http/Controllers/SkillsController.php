@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repositories\Eloquent\UserRepository;
 use App\Repositories\Eloquent\SkillRepository;
 
 class SkillsController extends Controller
 {
-    function __construct(SkillRepository $skillRepo)
+    protected $userRepo;
+    protected $skillRepo;
+
+    function __construct(SkillRepository $skillRepo, UserRepository $userRepo)
     {
+        $this->userRepo = $userRepo;
         $this->skillRepo = $skillRepo;
     }
     /**
@@ -39,7 +44,8 @@ class SkillsController extends Controller
      */
     public function store(Request $request)
     {
-        $skill = $this->skillRepo->store($request);
+        $user = $this->userRepo->requiredById($request->user_id);
+        $skill = $this->skillRepo->store($request, $user);
 
         return back()->withStatus('Skill Added');
     }

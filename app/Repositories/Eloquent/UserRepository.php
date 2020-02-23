@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
  */
 class UserRepository extends Repository
 {
+	protected $sortBy = ['created_at-desc', 'created_at-asc', 'updated_at-desc', 'updated_at-asc', 'name-desc', 'name-asc', 'price-desc', 'price-asc', 'discount-desc', 'discount-asc'];
 
 	public function model()
 	{
@@ -132,5 +133,47 @@ class UserRepository extends Repository
                 'text' => $item->name,
             ];
         });
+	}
+
+	public function searchFilterAndPaginate($filters)
+	{
+		$query = $this->searchAndFilter($filters);
+
+		return $query->paginate(25);
+	}
+
+	public function searchAndFilter($filters)
+	{
+		$query = $this->users();
+
+		if(array_key_exists('s', $filters) && $filters['s']) {
+            $query = $this->search($query, $filters['s']);
+        }
+
+        if(array_key_exists('sort', $filters) && $filters['sort']) {
+            $query = $this->sort($query, $filters['sort']);
+        }
+
+        return $query;
+	}
+
+	public function search($query, $s, $tableName = 'users')
+	{
+		return $query->where(function($q) use($s, $tableName) {
+			$q->where("{$tableName}.name", 'like', "%{$s}%");
+		});
+	}
+
+	public function sort($query, $sort = null, $tableName = "users")
+	{
+		if(!$sort) return $query->orderBy("{$tableName}.created_at", 'desc');;
+
+		if (in_array($sort, $this->sortBy)) {
+            list($name, $order) = explode('-', $sort);
+
+            return $query->orderBy("{$tableName}.{$name}", $order);
+        }
+
+        abort(404);
 	}
 }

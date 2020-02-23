@@ -1,14 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Repositories\Eloquent\UserRepository;
 use App\Repositories\Eloquent\PortfolioRepository;
 
 use Illuminate\Http\Request;
 
 class PortfoliosController extends Controller
 {
-    function __construct(PortfolioRepository $portfolioRepo)
+    protected $userRepo;
+    protected $portfolioRepo;
+
+    function __construct(PortfolioRepository $portfolioRepo, UserRepository $userRepo)
     {
+        $this->userRepo = $userRepo;
         $this->portfolioRepo = $portfolioRepo;
     }
     /**
@@ -39,7 +44,8 @@ class PortfoliosController extends Controller
      */
     public function store(Request $request)
     {
-        $portfolio = $this->portfolioRepo->store($request);
+        $user = $this->userRepo->requiredById($request->user_id);
+        $portfolio = $this->portfolioRepo->store($request, $user);
 
         return back()->withStatus('Portfolio Added');
     }

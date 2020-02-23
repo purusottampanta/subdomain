@@ -18,16 +18,17 @@ class PortfolioRepository extends Repository
 		return $this->model;
 	}
 
-	public function store($request)
+	public function store($request, $user)
 	{
-        $portfolio->users()
-            ->attach($user,
+        $user->portfolios()
+            ->create(
                 [
+					'user_id' => $user->id,
                     'project_name' => $request->project_name,
                     'project_type' => $request->project_type,
                     'project_url' => $request->project_url,
                 ]);
 
-        return $portfolio;
+        return $user->portfolio;
     }
 }

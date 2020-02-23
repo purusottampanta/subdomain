@@ -18,18 +18,19 @@ class ExperienceRepository extends Repository
 		return $this->model;
 	}
 
-	public function store($request)
+	public function store($request, $user)
 	{
-        $experience->users()
-            ->attach($user,
+        $user->experiences()
+            ->create(
                 [
+                    'user_id' =>$user->id,
                     'company_name' => $request->company_name,
                     'designation' => $request->designation,
                     'from' => $request->from,
                     'to' => $request->to? :null,
-                    'experience' => $request->experience,
+                    // 'experience' => $request->experience,
                 ]);
 
-        return $experience;
+        return $user->experience;
     }
 }

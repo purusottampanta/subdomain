@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UserFilterRequest;
 use App\Repositories\Eloquent\UserRepository;
 
 class UsersController extends Controller
@@ -16,11 +17,13 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(UserFilterRequest $request)
     {
-        $users = $this->userRepo->paginate(null,20);
+        $s = $request->s;
+        $sort = $request->sort;
+        $users = $this->userRepo->searchFilterAndPaginate($request->filters());
 
-        return view('users.index',compact('users'));
+        return view('users.index',compact('users','s','sort'));
     }
 
     /**

@@ -18,11 +18,12 @@ class DetailRepository extends Repository
 		return $this->model;
 	}
 
-	public function store($request)
+	public function store($request, $user)
 	{
-        $detail->users()
-            ->attach($user,
+        $user->detail()
+            ->create(
                 [
+                    'user_id' => $user->id,
                     'father_name' => $request->father_name? :null,
                     'mother_name' => $request->mother_name? :null,
                     'grandfather_name' => $request->grandfather_name? :null,
@@ -36,6 +37,6 @@ class DetailRepository extends Repository
                     'pan_no' => $request->pan_no? :null,
                 ]);
 
-        return $detail;
+        return $user->detail;
     }
 }
