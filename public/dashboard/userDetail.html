@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Dashborad | Hire Me Nepal Pvt. Ltd.</title>
+    <title>User Details | Hire Me Nepal Pvt. Ltd.</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -36,47 +36,230 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-2 dashSpaceCut">
-                    <div class="adminData">
-                        <div class="row">
-                            <div class="col-4">
-                                <div class="userImg">
-                                    <img src="images/user.png">
+                    <div class="dashGrp">
+                        <div class="adminData">
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="userImg">
+                                        <img src="images/user.png">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-8">
-                                <div class="userInfo">
-                                    <h6>Welcome Back</h6>
-                                    <p>Admin</p>
+                                <div class="col-8">
+                                    <div class="userInfo">
+                                        <h6>Welcome Back</h6>
+                                        <p>Admin</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="dashMenus">
-                        <ul>
-                            <li><a href="dashboard.html"><i class="fa fa-tachometer-alt"></i>Dashboard</a></li>
-                            <li><a href="notices.html"><i class="fa fa-clipboard"></i>Notices</la></li>
-                            <li><a href="oragnization.html"><i class="fa fa-building"></i>Organizations</a></li>
-                            <li class="active"><a href="users.html"><i class="fa fa-users"></i>Users</a></li>
-                            <li><a href="settings.html"><i class="fa fa-cog"></i>Settings</a></li>
-                            <li><a href="#"><i class="fa fa-sign-out-alt"></i>Log Out</a></li>
-                        </ul>
+                        <div class="dashMenus">
+                            <ul>
+                                <li><a href="dashboard.html"><i class="fa fa-tachometer-alt"></i>Dashboard</a></li>
+                                <li>
+                                    <a href="notices.html">
+                                        <i class="fa fa-clipboard"></i>Notices</la>
+                                </li>
+                                <li><a href="oragnization.html"><i class="fa fa-building"></i>Organizations</a></li>
+                                <li class="active"><a href="users.html"><i class="fa fa-users"></i>Users</a></li>
+                                <li><a href="settings.html"><i class="fa fa-cog"></i>Settings</a></li>
+                                <li><a href="#"><i class="fa fa-sign-out-alt"></i>Log Out</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-10 dashSpaceContain">
                     <div class="dashContain">
                         <h1>User Details</h1>
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="userDetailBack">
-                                    <div class="userDetDashImg">
-                                        <img src="images/amit.jpg">
+                        <!-- <div class="row">
+                        <div class="col-lg-4">
+                            <div class="userDetailBack">
+                                <h5>Basic Informations</h5>
+                                <div class="userDetDashImg">
+                                    <img src="images/amit.jpg">
+                                </div>
+                                <p><strong>Name : </strong>Amit Acharya</p>
+                                <p><strong>Phone : </strong>9841754316</p>
+                                <p><strong>Email : </strong>amitAchrya@gmail.com</p>
+                                <p><strong>User Type : </strong>System</p>
+                                <p><strong>Status : </strong>Verified</p>
+                                <p><strong>Joiined Date : </strong>2020-02-05</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 ">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5>Education and Skills</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        </div> -->
+                        <div class="newDashUserMenu">
+                            <ul>
+                                <li><a href="userDetail.html" class="active">Basic Informations</a></li>
+                                <li><a href="userPortfolio.html">Portfolio</a></li>
+                                <li><a href="experienceDetails.html">Experience</a></li>
+                                <li><a href="userDocument.html">User Documents</a></li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                Basic Informations
+                                <a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#editBasicInformations" class="ml-2">Edit</a>
+                            </div>
+                            <div class="card-body">
+                                <div class="row cardUserData">
+                                    <div class="col-lg-4">
+                                        <p><strong>Name : </strong>Amit Acharya</p>
                                     </div>
-                                    <p><strong>Name : </strong>Amit Acharya</p>
-                                    <p><strong>Phone : </strong>9841754316</p>
-                                    <p><strong>Email : </strong>amitAchrya@gmail.com</p>
-                                    <p><strong>User Type : </strong>System</p>
-                                    <p><strong>Status : </strong>Verified</p>
-                                    <p><strong>Joiined Date : </strong>2020-02-05</p>
+                                    <div class="col-lg-4">
+                                        <p><strong>Phone : </strong>9841754316</p>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <p><strong>Email : </strong>amitAchrya@gmail.com</p>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <p><strong>User Type : </strong>System</p>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <p><strong>Status : </strong>Verified</p>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <p><strong>Joiined Date : </strong>2020-02-05</p>
+                                    </div>
+                                    <div class="userDetDashImg">
+                                        <img src="images/user.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                Profile
+                                <a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#editProfileModal">Edit</a>
+                            </div>
+                            <div class="card-body ">
+                                <div class="row ">
+                                    <div class="col-lg-4">
+                                        <p><strong>Profession : </strong>Laravel Developer</p>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <p><strong>Expected Salary : </strong>35,000</p>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <p><strong>Current Company : </strong>Reizon Studio Pvt. Ltd.</p>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <p><strong>Description : </strong></p>
+                                        <p>
+                                            Description : Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                                            Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="subDivisonCard">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            KYC Details
+                                            <a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#editKycModal">Edit</a>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row  kycBody">
+                                                <div class="col-lg-12">
+                                                    <p><strong>Grand Father's Name : </strong>Abc Prasad Acharya</p>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <p><strong>Father's Name : </strong>Xyz Kumar Acharya</p>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <p><strong>D.O.B. : </strong>2052-12-25</p>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <p><strong>Current Address : </strong>Maitidevi, Kathmandu, Nepal</p>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <p><strong>Permanent Address : </strong>Chitwan, Nepal</p>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <p><strong>Citizenship No. : </strong>01-25-37-1024562</p>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <p><strong>Citizenship Issued Date. : </strong>2068-01-13</p>
+                                                </div>
+                                                <div class="col-lg-12">
+                                                    <p><strong>Citizenship Issued From. : </strong>Chitwan Muncipality-14</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="card ">
+                                        <div class="card-header">
+                                            Education Details
+                                            <a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#addEdiucation">Add</a>
+                                        </div>
+                                        <div class="card-body edudata">
+                                            <ul>
+                                                <li>
+                                                    <h6>Orchid International College</h6>
+                                                    <p>Bachelors</p>
+                                                    <span>2014-2018</span>
+                                                    <span class="butonTag">
+                                                            <a href="#" data-toggle="modal" data-target="#editEducation"><i class="fa fa-pen"></i></a>
+                                                            <a href="#" data-toggle="modal" data-target="#deleeteWarning" class="ml-2"><i class="fa fa-trash-alt"></i></a>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <h6>Modern College of Management</h6>
+                                                    <p>Bachelors</p>
+                                                    <span>2012-2014</span>
+                                                    <span class="butonTag">
+                                                        <a href="#" data-toggle="modal" data-target="#editEducation"><i class="fa fa-pen"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#deleeteWarning" class="ml-2"><i class="fa fa-trash-alt"></i></a>
+                                                </span>
+                                                </li>
+                                                <li>
+                                                    <h6>Nepal Police H.S.B. School</h6>
+                                                    <p>School Level</p>
+                                                    <span>2011</span>
+                                                    <span class="butonTag">
+                                                        <a href="#" data-toggle="modal" data-target="#editEducation"><i class="fa fa-pen"></i></a>
+                                                        <a href="#" data-toggle="modal" data-target="#deleeteWarning" class="ml-2"><i class="fa fa-trash-alt"></i></a>
+                                                </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                Skills
+                                <a href="#" class="btn btn-secondary" data-toggle="modal" data-target="#addSkills">Add</a>
+                            </div>
+                            <div class="card-body ">
+                                <div class="skillTags">
+                                    <ul>
+                                        <li>
+                                            <a href="#" class="skilTagsBtn">Laravel Developer</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="skilTagsBtn">PHP</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="skilTagsBtn">HTML/CSS</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="skilTagsBtn">Javascript</a>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -85,9 +268,227 @@
             </div>
         </div>
     </div>
+    </div>
+    <!-- warning Modal -->
+    <div class="dashboardWarning">
+        <div class="modal fade" id="deleeteWarning" tabindex="-1" role="dialog" aria-labelledby="deleeteWarningTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="hireMeGrp">
+                            <div class="hireMeInner">
+                                <span class="fa fa-times close" data-dismiss="modal" aria-label="Close"></span>
+                                <h3>Are you sure want to delete it ?</h3>
+                                <button class="btn btn-hireMeWarn">Yes</button><button class="btn btn-hireMeInfo">No</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- basicInformation Modal -->
+    <div class="basicInfromationEdit">
+        <div class="modal fade" id="editBasicInformations" tabindex="-1" role="dialog" aria-labelledby="editBasicInformationsTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="hireMeGrp">
+                            <div class="hireMeInner">
+                                <span class="fa fa-times close" data-dismiss="modal" aria-label="Close"></span>
+                                <h4>Edit Basic Informations </h4>
+                                <label>Name</label>
+                                <input type="text" class="form-control" placeholder="Amit Acharya">
+                                <label>Phone</label>
+                                <input type="text" class="form-control" placeholder="9841754316">
+                                <label>Email</label>
+                                <input type="text" class="form-control" placeholder="amitAchrya@gmail.com">
+                                <label>User</label>
+                                <select class="form-control">
+                                    <option>System</option>
+                                    <option>Default</option>
+                                </select>
+                                <label>Status</label>
+                                <select class="form-control">
+                                    <option>Verfied</option>
+                                    <option>Unverified</option>
+                                </select>
+                                <label>Joined Date</label>
+                                <input type="text" class="form-control" placeholder="2020-02-05">
+                                <div class="modalBtnGrp">
+                                    <button class="btn btn-hireMeWarn">Cancel</button><button class="btn btn-hireMeSuccess">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- profile edit modal -->
+    <div class="basicInfromationEdit">
+        <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="hireMeGrp">
+                            <div class="hireMeInner">
+                                <span class="fa fa-times close" data-dismiss="modal" aria-label="Close"></span>
+                                <h4>Edit Profile Informations </h4>
+                                <label>Profession</label>
+                                <input type="text" class="form-control " placeholder="Laravel Developer">
+                                <label>Expected Salary</label>
+                                <input type="text" class="form-control " placeholder="35000">
+                                <label>Current Company</label>
+                                <input type="text" class="form-control " placeholder="Reizon Studio Pvt. Ltd.">
+                                <label>Description</label>
+                                <textarea rows="4" class="form-control" required="" placeholder="Description : Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.."
+                                    name="question" id="question" value="" autofocus=""></textarea>
+                                <div class="modalBtnGrp ">
+                                    <button class="btn btn-hireMeWarn ">Cancel</button><button class="btn btn-hireMeSuccess ">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- kyc detail edit -->
+    <div class="basicInfromationEdit">
+        <div class="modal fade" id="editKycModal" tabindex="-1" role="dialog" aria-labelledby="editKycModalTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="hireMeGrp">
+                            <div class="hireMeInner">
+                                <span class="fa fa-times close" data-dismiss="modal" aria-label="Close"></span>
+                                <h4>Edit KYC Details </h4>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label>Grand Father's Name</label>
+                                        <input type="text" class="form-control " placeholder="Abc Prasad Acharya">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Father's Name</label>
+                                        <input type="text" class="form-control " placeholder="Xyz Prasad Acharya">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>D.O.B.</label>
+                                        <input type="text" class="form-control " placeholder="2052-12-25">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Current Address</label>
+                                        <input type="text" class="form-control " placeholder="Maitidevi, Kathmandu, Nepal">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Permanent Address</label>
+                                        <input type="text" class="form-control " placeholder="Chitwan, Nepal">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Citizenship No.</label>
+                                        <input type="text" class="form-control " placeholder="01-25-37-1024562">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Citizenship Issued Date</label>
+                                        <input type="text" class="form-control " placeholder="2068-01-12">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label>Citizenship Issued From</label>
+                                        <input type="text" class="form-control " placeholder=" Chitwan Muncipality-14">
+                                    </div>
+                                </div>
+
+                                <div class="modalBtnGrp ">
+                                    <button class="btn btn-hireMeWarn ">Cancel</button><button class="btn btn-hireMeSuccess ">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- add education details -->
+    <div class="basicInfromationEdit">
+        <div class="modal fade" id="addEdiucation" tabindex="-1" role="dialog" aria-labelledby="addEdiucationTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="hireMeGrp">
+                            <div class="hireMeInner">
+                                <span class="fa fa-times close" data-dismiss="modal" aria-label="Close"></span>
+                                <h4>Add Education Details </h4>
+                                <label>School/College Name</label>
+                                <input type="text" class="form-control " placeholder="Enter Scholol or college name">
+                                <label>School/College Level</label>
+                                <input type="text" class="form-control " placeholder="Enter Scholol or college level">
+                                <label>From</label>
+                                <input type="date" class="form-control " placeholder="Started From">
+                                <label>To</label>
+                                <input type="date" class="form-control " placeholder="Started To">
+
+                                <div class="modalBtnGrp ">
+                                    <button class="btn btn-hireMeWarn ">Cancel</button><button class="btn btn-hireMeSuccess ">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- edit education details -->
+    <div class="basicInfromationEdit">
+        <div class="modal fade" id="editEducation" tabindex="-1" role="dialog" aria-labelledby="editEducationTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="hireMeGrp">
+                            <div class="hireMeInner">
+                                <span class="fa fa-times close" data-dismiss="modal" aria-label="Close"></span>
+                                <h4>Edit Education Details </h4>
+                                <label>School/College Name</label>
+                                <input type="text" class="form-control " placeholder="Orchid International College">
+                                <label>School/College Level</label>
+                                <input type="text" class="form-control " placeholder="Intermediate level">
+                                <label>From</label>
+                                <input type="date" class="form-control " placeholder="Started From">
+                                <label>To</label>
+                                <input type="date" class="form-control " placeholder="Started To">
+
+                                <div class="modalBtnGrp ">
+                                    <button class="btn btn-hireMeWarn ">Cancel</button><button class="btn btn-hireMeSuccess ">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- add skills-->
+    <div class="basicInfromationEdit">
+        <div class="modal fade" id="addSkills" tabindex="-1" role="dialog" aria-labelledby="addSkillsTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="hireMeGrp">
+                            <div class="hireMeInner">
+                                <span class="fa fa-times close" data-dismiss="modal" aria-label="Close"></span>
+                                <h4>Edit Skills Details </h4>
 
 
-
+                                <div class="modalBtnGrp ">
+                                    <button class="btn btn-hireMeWarn ">Cancel</button><button class="btn btn-hireMeSuccess ">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript " src="js/jquery-3.2.1.min.js "></script>
     <script type="text/javascript " src="js/bootstrap.min.js "></script>
     <script src="js/owl.carousel.min.js "></script>

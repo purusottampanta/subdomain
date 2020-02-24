@@ -53,6 +53,14 @@
         .searchBox {
             width: 350px;
             margin-left: 20px;
+            position: relative;
+        }
+        
+        .searchBox span {
+            position: absolute;
+            top: 11px;
+            color: #b9bdc3;
+            right: 20px;
         }
         
          ::placeholder {
@@ -77,27 +85,33 @@
             padding: 30px 0;
         }
         
-        .logInHead h1 {
+        .logInHead h1,
+        .registerHead h1 {
             color: #2C1DEC;
             margin-bottom: 0;
             padding-bottom: 0;
-            font-size: 70px;
+            font-size: 50px;
             font-weight: bold;
         }
         
-        .logInHead h5 {
+        .registerHead {
+            padding-top: 1.8pc;
+        }
+        
+        .logInHead h5,
+        .registerHead h5 {
             color: #707070;
             text-transform: capitalize;
         }
         
         .registerData {
-            margin-top: 50px;
+            margin-top: 20px;
         }
         
         .loginData input,
         .registerData input,
         .registerData select {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             height: 50px;
             border-radius: 50px;
         }
@@ -249,5 +263,13 @@
         }
         
         .logInContain {
-            padding-top: 6pc;
+            padding-top: 5pc;
+        }
+        
+        label {
+            font-weight: bold;
+        }
+        
+        .smallDeviceSearchBar {
+            display: none;
         }

@@ -1,4 +1,78 @@
-        @media(min-width:300px) and (max-width:1100px) {}
+        @media(min-width:300px) and (max-width:1100px) {
+            .logImg,
+            .hireMeNav .searchBox {
+                display: none;
+            }
+            .navbar-light .navbar-nav .nav-link {
+                color: #707070;
+                font-size: 15px;
+                /* padding-right: 16px; */
+                text-align: right;
+                padding-bottom: 5px;
+            }
+            .navbar-light .btn-hireMeNepal {
+                width: 165px;
+                float: right;
+                margin-bottom: 18px;
+                padding-top: 10px;
+            }
+            .smallDeviceSearchBar {
+                display: block;
+                margin-top: 90px;
+            }
+            .smallDeviceSearchBar .searchBox {
+                width: auto;
+                margin-left: 0px;
+            }
+            .container-fluid {
+                padding: 0 30px;
+            }
+            .hireMeNav .navbar {
+                padding: 10px 30px;
+            }
+            .logWith {
+                margin: 15px auto;
+            }
+            .hireMeBack {
+                height: auto;
+                margin-top: 30px;
+            }
+            .topFooter .footerInput {
+                width: 100%;
+            }
+            .topFooter h1 {
+                font-size: 20px;
+            }
+            .topFooter h1:after {
+                top: 2pc;
+                height: 5px;
+                width: 60px;
+                left: 42%;
+            }
+            .lowFooter p {
+                font-size: 12px;
+            }
+            .lowFooter {
+                padding: 20px 0;
+            }
+            .logInContain,
+            .registerHead {
+                padding-top: 0;
+            }
+            .logInHead h1,
+            .registerHead h1 {
+                text-align: center;
+            }
+            .logInHead h5,
+            .registerHead h5 {
+                font-size: 15px;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+            .registerHead {
+                margin-bottom: 30px;
+            }
+        }
         /* hd screens */
         
         @media(min-width:1530px) and (max-width:1550px) {
@@ -12,6 +86,24 @@
             .logInContain {
                 padding-top: 8pc;
             }
+            .registerHead {
+                padding-top: 0;
+            }
+            .logInHead h1,
+            .registerHead h1 {
+                font-size: 65px;
+            }
+            .registerData {
+                margin-top: 50px;
+            }
+            .loginData input,
+            .registerData input,
+            .registerData select {
+                margin-bottom: 30px;
+            }
+            .registerHead {
+                padding-top: 0;
+            }
         }
         /* large screens */
         
@@ -19,12 +111,30 @@
             .logInContain {
                 padding: 75px 0;
             }
+            .registerHead {
+                padding-top: 2.8pc;
+            }
+            .loginData input,
+            .registerData input,
+            .registerData select {
+                margin-bottom: 30px;
+            }
+            .registerData {
+                margin-top: 50px;
+            }
+            .logInHead h1,
+            .registerHead h1 {
+                font-size: 65px;
+            }
+            .registerHead {
+                padding-top: 3pc;
+            }
             .logImg {
                 width: 700px;
                 height: 700px;
             }
             .logInHead {
-                padding: 10pc 0;
+                padding: 8pc 0;
             }
             .logImg {
                 margin: 85px 1pc 20px auto;
@@ -42,5 +152,14 @@
             .logWith {
                 font-size: 18px;
                 padding: 20px;
+            }
+            .registerHead {
+                padding-top: 6pc;
+            }
+            .registerHead h5 {
+                margin-bottom: 30px;
+            }
+            .registerHead .btn-hireMeNepal {
+                margin-top: 50px;
             }
         }
