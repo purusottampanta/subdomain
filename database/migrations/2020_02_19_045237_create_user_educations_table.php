@@ -13,6 +13,7 @@ class CreateUserEducationsTable extends Migration
      */
     public function up()
     {
+        //educations matra rakhe ni hunxa hola
         Schema::create('user_educations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->index()->nullable();

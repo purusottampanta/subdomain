@@ -19,7 +19,7 @@ class CreateOrganizationUserTable extends Migration
             $table->string('code')->nullable();
             $table->boolean('is_owner')->default(0);
             $table->boolean('is_active')->default(0);
-            $table->boolean('state')->default(1);
+            $table->boolean('state')->default(1);//purpose of is_active and state, why both?
             $table->string('status')->default('pending');
             $table->bigInteger('hit_count')->nullable();
             $table->timestamp('last_active')->nullable();

@@ -13,6 +13,8 @@ class CreateUserDetailsTable extends Migration
      */
     public function up()
     {
+        //user vanda ni job seeker rakheko vaye hunthyo hola??
+        //user ta oranization ko ni user hunxa 
         Schema::create('user_details', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id')->index()->nullable();

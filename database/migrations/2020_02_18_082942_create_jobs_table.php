@@ -13,6 +13,7 @@ class CreateJobsTable extends Migration
      */
     public function up()
     {
+        //jobs vanne table nabanayeko vaye hunthyo coz email haru queue ma basne vaneko laravel ko default jobs table ma ho
         Schema::create('jobs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');

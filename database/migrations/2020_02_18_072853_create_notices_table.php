@@ -15,13 +15,13 @@ class CreateNoticesTable extends Migration
     {
         Schema::create('notices', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
+            $table->string('name');  
             $table->string('slug')->unique();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->timestamp('publish_at')->nullable();
-            $table->timestamp('publish_to')->nullable();
-            $table->string('status',50)->default('unpublished');
-            $table->string('title');
+            $table->timestamp('publish_to')->nullable(); //??
+            $table->string('status',50)->default('unpublished');//status kati ota hunxa??
+            $table->string('title');// diff bet name and title
             $table->text('description')->nullable();
             $table->timestamp('listing_start_at')->nullable();
             $table->timestamps();
