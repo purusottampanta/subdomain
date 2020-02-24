@@ -1,20 +1,22 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Repositories\Eloquent\UserRepository;
-use App\Repositories\Eloquent\DocumentRepository;
+use App\Repositories\Eloquent\DetailRepository;
 
-class DocumentsController extends Controller
+
+class DetailsController extends Controller
 {
     protected $userRepo;
-    protected $documnetRepo;
+    protected $detailRepo;
 
-    function __construct(UserRepository $userRepo, DocumentRepository $documnetRepo)
+    function __construct(DetailRepository $detailRepo, UserRepository $userRepo)
     {
         $this->userRepo = $userRepo;
-        $this->documnetRepo = $documnetRepo;
+        $this->detailRepo = $detailRepo;
     }
     /**
      * Display a listing of the resource.
@@ -23,7 +25,7 @@ class DocumentsController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -45,9 +47,9 @@ class DocumentsController extends Controller
     public function store(Request $request)
     {
         $user = $this->userRepo->requiredById($request->user_id);
-        $document = $this->documnetRepo->store($request, $user);
+        $detail = $this->detailRepo->store($request, $user);
 
-        return back()->withStatus('Documents Added');
+        return back()->withStatus('Details added');
     }
 
     /**
@@ -92,9 +94,9 @@ class DocumentsController extends Controller
      */
     public function destroy($id)
     {
-        $document = $this->documentRepo->requiredById($id);
-        $document->delete();
+        $detail = $this->detailRepo->requiredById($id);
+        $detail->delete();
 
-        return back()->withStatus('Document Deleted');
+        return back()->withStatus('Detail Deleted');
     }
 }

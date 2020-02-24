@@ -26,7 +26,7 @@ class HomeController extends Controller
     {
         if (authUser()->type=='system') {
             $users = $this->userRepo->paginate(null,20);
-            return view('home',compact('users'));
+            return view('admin.home',compact('users'));
         }
         else {
             return view('welcome');

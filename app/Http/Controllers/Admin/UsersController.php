@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\UserFilterRequest;
 use App\Repositories\Eloquent\UserRepository;
 
@@ -23,7 +24,7 @@ class UsersController extends Controller
         $sort = $request->sort;
         $users = $this->userRepo->searchFilterAndPaginate($request->filters());
 
-        return view('users.index',compact('users','s','sort'));
+        return view('admin.users.index',compact('users','s','sort'));
     }
 
     /**
@@ -33,7 +34,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        return view('admin.users.create');
     }
 
     /**
@@ -53,7 +54,7 @@ class UsersController extends Controller
 
         $user = $this->userRepo->store($request);
 
-        return redirect()->route('users.index')->withStatus('User Create');
+        return redirect()->route('admin.users.index')->withStatus('User Create');
     }
 
     /**
@@ -66,7 +67,7 @@ class UsersController extends Controller
     {
         $user = $this->userRepo->requiredBySlug($slug);
         
-        return view('users.show',compact('user'));
+        return view('admin.users.show',compact('user'));
     }
 
     /**
@@ -79,7 +80,7 @@ class UsersController extends Controller
     {
         $user = $this->userRepo->requiredBySlug($slug);
         
-        return view('users.edit',compact('user'));
+        return view('admin.users.edit',compact('user'));
     }
 
     /**
@@ -98,7 +99,7 @@ class UsersController extends Controller
         $user = $this->userRepo->requiredById($id);
         $user = $this->userRepo->renew($user, $request);
 
-        return redirect()->route('users.index')->withStatus('User Updated');
+        return redirect()->route('admin.users.index')->withStatus('User Updated');
     }
 
     /**

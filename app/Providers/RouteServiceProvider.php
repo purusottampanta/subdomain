@@ -93,7 +93,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::domain($this->baseDomain('admin'))
             ->middleware('web')
-             ->namespace($this->namespace.'\A')
+             ->namespace($this->namespace.'\Admin')
              ->group(base_path('routes/admin.php'));
     }
 

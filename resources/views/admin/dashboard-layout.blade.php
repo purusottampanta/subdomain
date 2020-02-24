@@ -26,12 +26,12 @@
 </head>
 
 <body>
-    @include('layouts.partials.dashboard-navbar')
+    @include('admin.partials.dashboard-navbar')
 
     <div class="dashboardUi">
         <div class="container-fluid">
             <div class="row">
-                @include('layouts.partials.dashboard-sidebar')
+                @include('admin.partials.dashboard-sidebar')
                 
                 @yield('content')
             </div>
@@ -45,7 +45,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
     <script src="js/owl.carousel.min.js "></script>
     <script src=" js/scripts.js "></script>
-    @include('layouts.partials.alert')
+    @include('admin.partials.alert')
 </body>
 
 </html>

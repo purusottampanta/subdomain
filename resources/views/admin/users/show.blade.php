@@ -1,4 +1,4 @@
-@extends('layouts.dashboard-layout')
+@extends('admin.dashboard-layout')
 
 @section('title')
     Users
@@ -10,25 +10,25 @@
             <h1>User Details</h1>
             <div class="row">
                 <div class="col-md-1">
-                    <a href="#" data-toggle="modal" data-target="#creatProfileModal">Profile</a>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#creatProfileModal">Profile</a>
                 </div>
                 <div class="col-md-1">
-                    <a href="#" data-toggle="modal" data-target="#createEducationModal">Education</a>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#createEducationModal">Education</a>
                 </div>
                 <div class="col-md-1">
-                    <a href="#" data-toggle="modal" data-target="#createDetailModal">Details</a>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#createDetailModal">Details</a>
                 </div>
                 <div class="col-md-1">
-                    <a href="#" data-toggle="modal" data-target="#createDocumentModal">Documents</a>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#createDocumentModal">Documents</a>
                 </div>
                 <div class="col-md-1">
-                    <a href="#" data-toggle="modal" data-target="#createExperienceModal">Experiences</a>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#createExperienceModal">Experiences</a>
                 </div>
                 <div class="col-md-1">
-                    <a href="#" data-toggle="modal" data-target="#createPortfolioModal">Portfolios</a>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#createPortfolioModal">Portfolios</a>
                 </div>
                 <div class="col-md-1">
-                    <a href="#" data-toggle="modal" data-target="#createSkillModal">Skills</a>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#createSkillModal">Skills</a>
                 </div>
             </div>
             <div class="row">

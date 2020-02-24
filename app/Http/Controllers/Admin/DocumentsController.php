@@ -1,20 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
-use App\Repositories\Eloquent\UserRepository;
-use App\Repositories\Eloquent\PortfolioRepository;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Repositories\Eloquent\UserRepository;
+use App\Repositories\Eloquent\DocumentRepository;
 
-class PortfoliosController extends Controller
+class DocumentsController extends Controller
 {
     protected $userRepo;
-    protected $portfolioRepo;
+    protected $documnetRepo;
 
-    function __construct(PortfolioRepository $portfolioRepo, UserRepository $userRepo)
+    function __construct(UserRepository $userRepo, DocumentRepository $documnetRepo)
     {
         $this->userRepo = $userRepo;
-        $this->portfolioRepo = $portfolioRepo;
+        $this->documnetRepo = $documnetRepo;
     }
     /**
      * Display a listing of the resource.
@@ -45,9 +46,9 @@ class PortfoliosController extends Controller
     public function store(Request $request)
     {
         $user = $this->userRepo->requiredById($request->user_id);
-        $portfolio = $this->portfolioRepo->store($request, $user);
+        $document = $this->documnetRepo->store($request, $user);
 
-        return back()->withStatus('Portfolio Added');
+        return back()->withStatus('Documents Added');
     }
 
     /**
@@ -92,9 +93,9 @@ class PortfoliosController extends Controller
      */
     public function destroy($id)
     {
-        $portfolio = $this->portfolioRepo->requiredById($id);
-        $portfolio->delete();
+        $document = $this->documentRepo->requiredById($id);
+        $document->delete();
 
-        return back()->withStatus('Portfolio Deleted');
+        return back()->withStatus('Document Deleted');
     }
 }

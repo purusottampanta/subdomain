@@ -1,15 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Repositories\Eloquent\SettingRepository;
+use App\Http\Controllers\Controller;
+use App\Repositories\Eloquent\UserRepository;
+use App\Repositories\Eloquent\SkillRepository;
 
-class SettingsController extends Controller
+class SkillsController extends Controller
 {
-    function __construct(SettingRepository $settingRepo)
+    protected $userRepo;
+    protected $skillRepo;
+
+    function __construct(SkillRepository $skillRepo, UserRepository $userRepo)
     {
-        $this->settingRepo = $settingRepo;
+        $this->userRepo = $userRepo;
+        $this->skillRepo = $skillRepo;
     }
     /**
      * Display a listing of the resource.
@@ -18,9 +24,7 @@ class SettingsController extends Controller
      */
     public function index()
     {
-        $settings = $this->settingRepo->paginate(null,20);
-
-        return view('settings.index',compact('settings'));
+        //
     }
 
     /**
@@ -41,7 +45,10 @@ class SettingsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = $this->userRepo->requiredById($request->user_id);
+        $skill = $this->skillRepo->store($request, $user);
+
+        return back()->withStatus('Skill Added');
     }
 
     /**
@@ -63,9 +70,7 @@ class SettingsController extends Controller
      */
     public function edit($id)
     {
-        $setting = $this->settingRepo->requiredById($id);
-
-        return view('settings.edit',compact('setting'));
+        //
     }
 
     /**
@@ -77,9 +82,7 @@ class SettingsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $setting = $this->settingRepo->renew($request, $id);
-
-        return redirect()->route('settings.index')->withStatus('Setting Updated');
+        //
     }
 
     /**
@@ -90,6 +93,9 @@ class SettingsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $skill = $this->skillRepo->requiredById($id);
+        $skill->delete();
+
+        return back()->withStatus('Skill Deleted');
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.dashboard-layout')
+@extends('admin.dashboard-layout')
 
 @section('title')
     Users
@@ -8,6 +8,7 @@
     <div class="col-lg-10 dashSpaceContain">
         <div class="dashContain">
             <h1>Users</h1>
+            <a href="{{route('users.create')}}" class="btn btn-primary">Add new User</a>
             <div class="row">
 
                 <div class="col-lg-12">
