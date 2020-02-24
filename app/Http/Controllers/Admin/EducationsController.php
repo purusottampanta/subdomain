@@ -1,20 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Repositories\Eloquent\UserRepository;
-use App\Repositories\Eloquent\ExperienceRepository;
+use App\Repositories\Eloquent\EducationRepository;
 
-class ExperiencesController extends Controller
+class EducationsController extends Controller
 {
     protected $userRepo;
-    protected $experienceRepo;
+    protected $educationRepo;
 
-    function __construct(ExperienceRepository $experienceRepo, UserRepository $userRepo)
+    function __construct(EducationRepository $educationRepo, UserRepository $userRepo)
     {
         $this->userRepo = $userRepo;
-        $this->experienceRepo = $experienceRepo;
+        $this->educationRepo = $educationRepo;
     }
     /**
      * Display a listing of the resource.
@@ -45,9 +46,9 @@ class ExperiencesController extends Controller
     public function store(Request $request)
     {
         $user = $this->userRepo->requiredById($request->user_id);
-        $experience = $this->experienceRepo->store($request, $user);
+        $education = $this->educationRepo->store($request, $user);
 
-        return back()->withStatus('Experience Added');
+        return back()->withStatus('Education Added');
     }
 
     /**
@@ -92,9 +93,9 @@ class ExperiencesController extends Controller
      */
     public function destroy($id)
     {
-        $experience = $this->experienceRepo->requiredById($id);
-        $experience->delete();
+        $education = $this->educationRepo->requiredById($id);
+        $education->delete();
 
-        return back()->withStatus('Experience Deleted');
+        return back()->withStatus('Education Deleted');
     }
 }

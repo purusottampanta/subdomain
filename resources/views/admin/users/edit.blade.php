@@ -1,4 +1,4 @@
-@extends('layouts.dashboard-layout')
+@extends('admin.dashboard-layout')
 
 @section('title')
     Users
@@ -11,12 +11,13 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="editForm">
-                        <form action="{{route('users.store')}} " method="POST" id="createUserForm">
+                        <form action="{{route('users.update',$user->id)}} " method="POST">
                             @csrf
+                            @method('PATCH')
                             <div class="row">
                                 <div class="col-lg-6">
                                     <label>Full Name</label>
-                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" value="{{old('name')}}" name="name" required autofocus placeholder="Enter name">
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror" value="{{$user->name}}" name="name">
                                     @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -25,7 +26,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <label>Email Address</label>
-                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" value="{{old('email')}}" name="email" required placeholder="Enter email">
+                                    <input type="text" class="form-control @error('email') is-invalid @enderror" value="{{$user->email}}" name="email" disabled>
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -34,7 +35,7 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <label>Phone Number</label>
-                                    <input id="phone" type="number" class="form-control @error('phone') is-invalid @enderror" value="{{old('phone')}}" name="phone" required placeholder="Enter phone">
+                                    <input type="text" class="form-control @error('phone') is-invalid @enderror" value="{{$user->phone}}" name="phone" disabled>
                                     @error('phone')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -50,7 +51,9 @@
                                         name="type"
                                         required>
                                         @foreach(getUserTypes() as $key => $value)
-                                            <option value="{{ $key }}">{{ $value }}</option>
+                                            <option value="{{ $key }}" {{ $key == $user->type ? 'selected' : '' }}>
+                                                {{ $value }}
+                                            </option>
                                         @endforeach
                                     </select>
                                     @error('type')
@@ -58,19 +61,6 @@
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
-                                </div>
-                                <div class="col-lg-6">
-                                    <label>Password</label>
-                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required placeholder="Enter password">
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="col-lg-6">
-                                    <label>Confirm Password</label>
-                                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Re-Enter password">
                                 </div>
                                 <div class="col-lg-6">
                                     <label>Status</label>
@@ -81,7 +71,9 @@
                                         name="status"
                                         required>
                                         @foreach(getUserStatus() as $key => $value)
-                                            <option value="{{ $key }}">{{ $value }}</option>
+                                            <option value="{{ $key }}" {{ $key == $user->status ? 'selected' : '' }}>
+                                                {{ $value }}
+                                            </option>
                                         @endforeach
                                     </select>
                                     @error('status')
@@ -90,10 +82,9 @@
                                         </span>
                                     @enderror
                                 </div>
-                                <input type="hidden" name="created_by" value="{{authUser()->id}}">
                                 <div class="col-lg-12">
                                     <div class="dashButtton">
-                                        <button class="btn btn-hireMeBtn">Save</button>
+                                        <button class="btn btn-hireMeBtn">Save Changes</button>
                                     </div>
                                     <div class="clear"></div>
                                 </div>

@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Repositories\Eloquent\UserRepository;
-use App\Repositories\Eloquent\DetailRepository;
+use App\Repositories\Eloquent\PortfolioRepository;
 
-
-class DetailsController extends Controller
+class PortfoliosController extends Controller
 {
     protected $userRepo;
-    protected $detailRepo;
+    protected $portfolioRepo;
 
-    function __construct(DetailRepository $detailRepo, UserRepository $userRepo)
+    function __construct(PortfolioRepository $portfolioRepo, UserRepository $userRepo)
     {
         $this->userRepo = $userRepo;
-        $this->detailRepo = $detailRepo;
+        $this->portfolioRepo = $portfolioRepo;
     }
     /**
      * Display a listing of the resource.
@@ -24,7 +24,7 @@ class DetailsController extends Controller
      */
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -46,9 +46,9 @@ class DetailsController extends Controller
     public function store(Request $request)
     {
         $user = $this->userRepo->requiredById($request->user_id);
-        $detail = $this->detailRepo->store($request, $user);
+        $portfolio = $this->portfolioRepo->store($request, $user);
 
-        return back()->withStatus('Details added');
+        return back()->withStatus('Portfolio Added');
     }
 
     /**
@@ -93,9 +93,9 @@ class DetailsController extends Controller
      */
     public function destroy($id)
     {
-        $detail = $this->detailRepo->requiredById($id);
-        $detail->delete();
+        $portfolio = $this->portfolioRepo->requiredById($id);
+        $portfolio->delete();
 
-        return back()->withStatus('Detail Deleted');
+        return back()->withStatus('Portfolio Deleted');
     }
 }
