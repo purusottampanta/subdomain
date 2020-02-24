@@ -42,6 +42,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map()
     {
+        $this->mapAdminRoutes();
+
         $this->mapApiRoutes();
 
         $this->mapWebRoutes();
@@ -58,7 +60,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapWebRoutes()
     {
-        Route::middleware('web')
+        Route::domain($this->baseDomain())
+            ->middleware('web')
              ->namespace($this->namespace)
              ->group(base_path('routes/web.php'));
     }
@@ -72,9 +75,34 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapApiRoutes()
     {
-        Route::prefix('api')
+        Route::domain($this->baseDomain())
+            ->prefix('api')
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+    }
+
+    /**
+     * Define the "admin" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
+    protected function mapAdminRoutes()
+    {
+        Route::domain($this->baseDomain('admin'))
+            ->middleware('web')
+             ->namespace($this->namespace.'\A')
+             ->group(base_path('routes/admin.php'));
+    }
+
+    private function baseDomain(string $subdomain = ''): string
+    {
+        if (strlen($subdomain) > 0) {
+            $subdomain = "{$subdomain}.";
+        }
+
+        return $subdomain . config('app.base_domain');
     }
 }
